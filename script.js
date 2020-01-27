@@ -17,7 +17,6 @@ function loop() {
   }
   let fs = g("sb-font-size").value;
   
-  g("sb-width-txt").innerHTML = "Width (" + width + "%):";
   g("sb-activate-txt").innerHTML = "Activation Corner (" + corners[corner] + "):"
   g("sb-activate-width-txt").innerHTML = "Activation Button Width (" + awidth + "px):"
   g("sb-activate-height-txt").innerHTML = "Activation Button Height (" + aheight + "px):"
