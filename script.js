@@ -5,6 +5,9 @@ let side = "Right";
 
 function loop() {
   let width = g("sb-width").value;
+  if(side === "Right") {
+    width = 1 - width;
+  }
   let awidth = g("sb-activate-width").value;
   let aheight = g("sb-activate-height").value;
   let color = {
