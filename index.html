@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Side Menu Creator | ConnorCoder</title>
+  <style>
+    * {
+      font-family: Arial;
+      margin: auto;
+    }
+    .corner {
+      width: 200px;
+      height: 40px;
+      font-size: 23px;
+      line-height: 23px;
+    }
+  </style>
+  <script src="script.js"></script>
+</head>
+  <body>
+    <h1>Side Menu Creator</h1>
+    <span id="sb-width-txt">Width (50%):</span><br>
+    <input type="range" max="100" min="0" id="sb-width" value="50"/><br><br>
+    <span id="sb-activate-txt">Activation Corner (Top Left):</span><br>
+    <button class="corner" onclick="select(0)">Top Left</button><button class="corner" onclick="select(1)">Top Right</button><br>
+    <button class="corner" onclick="select(2)">Bottom Left</button><button class="corner" onclick="select(3)">Bottom Right</button><br><br>
+    <span id="sb-activate-width-txt">Activation Button Width (50px):</span><br>
+    <input type="range" max="100" min="0" id="sb-activate-width" value="50"/><br><br>
+    <span id="sb-activate-height-txt">Activation Button Height (50px):</span><br>
+    <input type="range" max="100" min="0" id="sb-activate-height" value="50"/><br>
+    <button id="sb-activate-display" style="width: 50px; height: 50px;"></button><br><br>
+    <span>Display Text:</span><br>
+    <textarea id="sb-txt" style="width: 90vw;height: 90vh"></textarea><br>
+    <span>Output:</span><br>
+    <input id="sb-output" readonly style="width: 90vw"></input>
+  </body>
+</html>
