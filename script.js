@@ -7,6 +7,11 @@ function loop() {
   let width = g("sb-width").value;
   let awidth = g("sb-activate-width").value;
   let aheight = g("sb-activate-height").value;
+  let color = {
+    bg: g("sb-color-background"),
+    txt: g("sb-color-text"),
+    b: g("sb-color-border")
+  }
   g("sb-width-txt").innerHTML = "Width (" + width + "%):";
   g("sb-activate-txt").innerHTML = "Activation Corner (" + corners[corner] + "):"
   g("sb-activate-width-txt").innerHTML = "Activation Button Width (" + awidth + "px):"
@@ -15,7 +20,7 @@ function loop() {
   g("sb-activate-display").style.height = aheight + "px";
   g("sb-side").innerHTML = "Side (" + side + "):";
   
-  let script = 'javascript:let toggle = 0;let ele = document.createElement("button");ele.style = "background:transparent;color:transparent;border:none;width:' + awidth + "px;height:" + aheight + 'px;position:fixed;z-Index:10000;' + cornersty[corner] + '";ele.onclick=function(){if(toggle === 0) {document.getElementById("divhack").style.display=null;toggle=1}else {document.getElementById("divhack").style.display="none";toggle=0};};document.body.appendChild(ele);let div = document.createElement("div");div.style = "width:' + width + '%;height:100%;position:fixed;' + side + ':0px;top:0px;z-Index:5000;color:black;background:white;border-color:black;border-left:solid;border-width:3px;display:none";div.id="divhack";document.body.appendChild(div);let txt = document.createElement("p");txt.innerHTML="' + g("sb-txt").value.split(`
+  let script = 'javascript:let toggle = 0;let ele = document.createElement("button");ele.style = "background:transparent;color:transparent;border:none;width:' + awidth + "px;height:" + aheight + 'px;position:fixed;z-Index:10000;' + cornersty[corner] + '";ele.onclick=function(){if(toggle === 0) {document.getElementById("divhack").style.display=null;toggle=1}else {document.getElementById("divhack").style.display="none";toggle=0};};document.body.appendChild(ele);let div = document.createElement("div");div.style = "width:' + width + '%;height:100%;position:fixed;' + side + ':0px;top:0px;z-Index:5000;color:' + color.txt + ';background:' + color.bg + ';border-color:' + color.b + ';border-left:solid;border-width:3px;display:none";div.id="divhack";document.body.appendChild(div);let txt = document.createElement("p");txt.innerHTML="' + g("sb-txt").value.split(`
 `).join("<br>").split('"').join('\\"') + '";document.getElementById("divhack").appendChild(txt);void 0';
   
   document.getElementById("sb-output").value = script;
