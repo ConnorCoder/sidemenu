@@ -21,6 +21,7 @@ function loop() {
   g("sb-activate-display").style.width = awidth + "px";
   g("sb-activate-display").style.height = aheight + "px";
   g("sb-side").innerHTML = "Side (" + side + "):";
+  g("sg-font-txt").innerHTML = "Font Size (" + fs + "px):";
   
   let script = 'javascript:let toggle = 0;let ele = document.createElement("button");ele.style = "background:transparent;color:transparent;border:none;width:' + awidth + "px;height:" + aheight + 'px;position:fixed;z-Index:10000;' + cornersty[corner] + '";ele.onclick=function(){if(toggle === 0) {document.getElementById("divhack").style.display=null;toggle=1}else {document.getElementById("divhack").style.display="none";toggle=0};};document.body.appendChild(ele);let div = document.createElement("div");div.style = "width:' + width + '%;height:100%;position:fixed;' + side + ':0px;top:0px;z-Index:5000;color:' + color.txt + ';font-size:' + fs + 'background:' + color.bg + ';border-color:' + color.b + ';border-left:solid;border-width:3px;display:none";div.id="divhack";document.body.appendChild(div);let txt = document.createElement("p");txt.innerHTML="' + g("sb-txt").value.split(`
 `).join("<br>").split('"').join('\\"') + '";document.getElementById("divhack").appendChild(txt);void 0';
