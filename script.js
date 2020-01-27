@@ -8,9 +8,9 @@ function loop() {
   let awidth = g("sb-activate-width").value;
   let aheight = g("sb-activate-height").value;
   let color = {
-    bg: g("sb-color-background"),
-    txt: g("sb-color-text"),
-    b: g("sb-color-border")
+    bg: g("sb-color-background").value,
+    txt: g("sb-color-text").value,
+    b: g("sb-color-border").value
   }
   g("sb-width-txt").innerHTML = "Width (" + width + "%):";
   g("sb-activate-txt").innerHTML = "Activation Corner (" + corners[corner] + "):"
